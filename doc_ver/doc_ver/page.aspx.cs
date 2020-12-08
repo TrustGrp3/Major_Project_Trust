@@ -15,7 +15,7 @@ namespace doc_ver
             if (Session["User"] == null)
             {
 
-                Response.Redirect("login.aspx");
+                Label1.Text = "123";
 
             }
             else

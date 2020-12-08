@@ -55,139 +55,358 @@
 
 <br>
 
-	<div class="container">
-		<div class="jumbotron">
-		
-		<h2><p><strong> Aadhar Card </strong></p></h2>
+	<form id="form2" runat="server"> 
+					<div class="container">
+ 
+            
+					<table class="table table-hover">
+							
+						<tbody>
+							<tr>
+								<td>
+									<div class="form-group">                          
+										<div class="col-xs-6">
+											<label><h5> Applicant Name</h5></label>
+											<asp:TextBox ID="name" runat="server" type="text" class="form-control"></asp:TextBox>
+										</div>
+									</div>
+								</td>
+							</tr>
 
-			<form id="upload-file" method="post" enctype="multipart/form-data">
-				<fieldset>
-					<img src="../static/13.jpeg" class="img-rounded" alt="Cinque Terre" width="300" height="200" id="file"> 
+							<tr>
+								<td>
+									<div class="form-group">                          
+										<div class="col-xs-6">
+											<label><h5> Father/Spous Name </h5></label> 
+											<asp:TextBox ID="fatherName" runat="server" type="text" class="form-control"></asp:TextBox>
+										</div>
+									</div>
+								</td>
+							</tr>
 
-				</fieldset>
-				<fieldset>
-					<button id="upload-file-btn" type="button">Verify</button>
-				</fieldset>
+							<tr>
+								<td>
+									<div class="form-group">                          
+										<div class="col-xs-6">
+											<label><h5> Mother Name </h5></label>  
+											<asp:TextBox ID="motherName" runat="server" type="text" class="form-control"></asp:TextBox>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 
-			</form>
-	      
+					<table class="table table-hover">
+							
+						<tbody>
+							<tr>
+								<td>
+									<label><h5> Date of Birth</h5></label> 
+									<asp:TextBox ID="dob" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
 
-	      <br><br>
+								<td>
+									<label><h5> Gender</h5></label> 
+									<asp:TextBox ID="gender" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
 
-			<div class="container">
-				
+								<td>
+									<label><h5> Marital Status </h5></label> 
+									<asp:TextBox ID="shadi" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
+							</tr>
 
-				<div class="row">
-					<div class="col-6 col-md-5"> <strong> Data from Image</strong></div>
-					<div class="col-6 col-sm-2"> &nbsp;&nbsp;</div>
-					<div class="col-6 col-md-5"> <strong> Data from DataBase</strong></div>
-				</div>
+							<tr>
+								<td>
+									<label><h5> Citizenship</h5></label> 
+									<asp:TextBox ID="citizenship" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
 
-			</div>
+								<td>
+									<label><h5> Resident</h5></label> 
+									<asp:TextBox ID="resident" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
 
+								<td>
+									<label><h5> Occupation Type </h5></label> 
+									<asp:TextBox ID="occupation" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
+							</tr>
+      
+						</tbody>
+					</table>
 
+					<table class="table table-hover">							
+						<tbody>
+							<tr>
+								<td>
+									<label><h5> Mobile No. </h5></label> 
+									<asp:TextBox ID="Number" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
+							
+								<td>
+									<label><h5> Email ID </h5></label> 
+									<asp:TextBox ID="email" runat="server" type="email" class="form-control"></asp:TextBox>
+								</td>
 
+								<td>
+									<label><h5> PAN NUMBER </h5></label> 
+									<asp:TextBox ID="PanNo" runat="server" type="text" class="form-control"></asp:TextBox>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 
-	    <br>
-		
+					<table class="table table-hover">							
+						<tbody>
+							<tr>
+								<td>
+									<label><h5> Photo </h5></label>									
+										<asp:Image ID="Image1" runat="server" class="img-rounded" data-toggle="modal" data-target="#myModal" alt="Cinque Terre" Width="300" />
+											<div class="modal fade" id="myModal">
+												<div class="modal-dialog modal-lg">
+													<center>
+														<asp:Image ID="Image1_1" runat="server" class="img-rounded" alt="Cinque Terre" Height="500" />
+														<br /> <br />
+														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													</center>
+												</div>
+											</div>	
 
-		<button type="button" class="btn btn-outline-danger">Not Verified</button>
+											<br>
 
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<div class="dropdown">
+											  <button class="btn btn-outline-danger">Not Verified</button>
+											  <div class="dropdown-content">
+											    <a href="#">Image Not Found</a>
+											    <a href="#">Blured Image</a>
+											    <a href="#">Other</a>
+											  </div>
+											</div>
 
-		<button type="button" class="btn btn-outline-success">Verified</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-		
+											<button type="button" class="btn btn-outline-success">Verified</button>											
+								</td>
+							
+								<td>
+									<label><h5> Signature </h5></label>
+										<asp:Image ID="Image2" runat="server" class="img-rounded" data-toggle="modal" data-target="#myModal2" alt="Cinque Terre" Width="300" />
+											 <div class="modal fade" id="myModal2">
+												<div class="modal-dialog modal-lg">
+													<center>
+														<br /> <br />
+														<asp:Image ID="Image2_2" runat="server" class="img-rounded" alt="Cinque Terre" Height="300" />
+														<br /> <br />
+														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													</center>
+												</div>
+											</div>	
 
+											<br>
 
+											<div class="dropdown">
+											  <button class="btn btn-outline-danger">Not Verified</button>
+											  <div class="dropdown-content">
+											    <a href="#">Image Not Found</a>
+											    <a href="#">Blured Image</a>
+											    <a href="#">Other</a>
+											  </div>
+											</div>
 
-	  </div>
-	</div>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-	<br />
-
-	<div class="container">
-		<div class="jumbotron">
-		
-		<h2><p><strong> Pan Card </strong></p></h2>
-	      
-	      <img src="../static/pan.png" class="img-rounded" alt="Cinque Terre" width="300" height="200"> 
-
-	      <br><br>
-
-			<div class="container">
-				
-
-				<div class="row">
-					<div class="col-6 col-md-5"> <strong> Data from Image</strong></div>
-					<div class="col-6 col-sm-2"> &nbsp;&nbsp;</div>
-					<div class="col-6 col-md-5"> <strong> Data from DataBase</strong></div>
-				</div>
-
-			</div>
-
-
-
-
-	    <br>
-		
-
-		<button type="button" class="btn btn-outline-danger">Not Verified</button>
-
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-		<button type="button" class="btn btn-outline-success">Verified</button>
-
-		
-
+											<button type="button" class="btn btn-outline-success">Verified</button>							
+								</td>
+							</tr>
+						</tbody>
+					</table>
 	
+					</div>
+											   			
+						
+						<div class="container">
+  							
+                            <h3 style="text-align:center">Client Documents</h3>
+  							
+  							<table class="table table-hover" align="CENTER">
+    							<thead>
+      								<tr>
+        								<th>Document Name</th>
+        								<th>Document</th>
+										<th>Description</th>
+										          							
+      								</tr>
+    							</thead>
 
-	  </div>
-	</div>
+    							<tbody>
 
 
+					      			<tr>
+							        	<td> 
+											<br><br><br><br>
+											<label> Proof of Identity </label> 
+											<br />
+											<strong>
+											<asp:Label ID="IdType" runat="server"></asp:Label>
+											</strong>
+							        	</td>
+
+							        	<td> <asp:Image ID="Image3" runat="server" class="img-rounded" data-toggle="modal" data-target="#myModal3" alt="Cinque Terre" Width="300" />
+											 <div class="modal fade" id="myModal3">
+												<div class="modal-dialog modal-lg">
+													<center>
+														<asp:Image ID="Image3_3" runat="server" class="img-rounded" alt="Cinque Terre" Height="500" />
+														<br /> <br />
+														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													</center>
+												</div>
+											</div>
+
+											<br>
+											<div class="dropdown">
+											  <button class="btn btn-outline-danger">Not Verified</button>
+											  <div class="dropdown-content">
+											  	<a href="#">Information Mismatch</a>
+											    <a href="#">Blured Image</a>
+											    <a href="#">Image Not Found</a>
+											    <a href="#">Other</a>
+											    
+											  </div>
+											</div>
+
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+											<button type="button" class="btn btn-outline-success">Verified</button>
+											
+										</td>
+							        	<td>
+											<label> Document Number </label> 
+											<asp:TextBox ID="IdentityNum" runat="server" type="text" class="form-control"></asp:TextBox>
+											<br />
+											<label> Identity Expiry Date </label> 
+											<asp:TextBox ID="passportExpDate" runat="server" type="text" class="form-control"></asp:TextBox>
+											<br />
+							        	</td>
+							      	</tr>
 
 
+							      	<tr>
+							        	<td> <br><br><br><br>
+											<label> Proof of Address </label>
+											<br />
+											<strong>
+                                            <asp:Label ID="AdType" runat="server"></asp:Label>
+											</strong>
+							        	</td>
+							        	<td> <asp:Image ID="Image5" runat="server" class="img-rounded" data-toggle="modal" data-target="#myModal5" alt="Cinque Terre" Width="300" />
+											 <div class="modal fade" id="myModal5">
+												<div class="modal-dialog modal-lg">
+													<center>
+														<asp:Image ID="Image5_5" runat="server" class="img-rounded" alt="Cinque Terre" Height="500" />
+														<br /> <br />
+														<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+													</center>
+												</div>
+											</div>
 
-	<div class="container">
+											<br>
+											<div class="dropdown">
+											  <button class="btn btn-outline-danger">Not Verified</button>
+											  <div class="dropdown-content">
+											    <a href="#">Info. Mismatch</a>
+											    <a href="#">Blured Image</a>
+											    <a href="#">Image Not Found</a>
+											    <a href="#">Other</a>
+											  </div>
+											</div>
 
-	<div class="progress">
-	  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-	  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-		40% Complete (success)
-	  </div>
-	</div>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-	<br />
+											<button type="button" class="btn btn-outline-success">Verified</button>
+											
+										</td>
+							        	<td>
+											<label> Address 1 </label> 
+											<asp:TextBox ID="permanantAdd" runat="server" type="text" class="form-control"></asp:TextBox>											
+											<label> Address 2 </label> 
+											<asp:TextBox ID="tempAdd" runat="server" type="text" class="form-control"></asp:TextBox>
 
-	<button type="button" class="btn btn-outline-danger btn-lg btn-block">Submit</button>
+											<label> City </label> 
+											<asp:TextBox ID="city" runat="server" type="text" class="form-control"></asp:TextBox>
+											<label> State </label> 
+											<asp:TextBox ID="state" runat="server" type="text" class="form-control"></asp:TextBox>
+											<label> Postel Pin </label> 
+											<asp:TextBox ID="pin" runat="server" type="text" class="form-control"></asp:TextBox>
+							        	</td>
+							      	</tr>
 
-	</div>
 
-	<br><br>
+					    		</tbody>
+					  		</table>
+						</div>
+						
+						
+						<div class="container">
 
-</center>
+						<div class="progress">
+						  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
+						  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+							40% Complete (success)
+						  </div>
+						</div>
+
+						<br />
+
+						<button type="button" class="btn btn-outline-danger btn-lg btn-block">Submit</button>
+
+						</div>
+
+						<br><br>
+					</form>
+					
+						
+				
 </body>
 
-	<script>
-        $(function () {
-            $('#upload-file-btn').click(function () {
-                var form_data = new FormData($('#upload-file')[0]);
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://127.0.0.1:5000/uploadlabel',
-                    data: form_data,
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function (data) {
-                        console.log('Success!');
-                    },
-                });
-            });
-        });
 
+	<style>
+	.dropbtn {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 16px;
+	  font-size: 16px;
+	  border: none;
+	}
 
-	</script>
+	.dropdown {
+	  position: relative;
+	  display: inline-block;
+	}
+
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f1f1f1;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+
+	.dropdown-content a {
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	}
+
+	.dropdown-content a:hover {background-color: #ddd;}
+
+	.dropdown:hover .dropdown-content {display: block;}
+
+	.dropdown:hover .dropbtn {background-color: #3e8e41;}
+	</style>
+
 
 </html>
