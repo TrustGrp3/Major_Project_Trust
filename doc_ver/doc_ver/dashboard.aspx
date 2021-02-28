@@ -64,9 +64,9 @@
         <div class="row">
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
             <div class="box">
-              <div class="icon" style="background: #fceef3;"><i class="ion-ios-paper-outline" style="color: #ff689b;"></i></div>
+              <center><img src="../static/kyc.png" width="80"></center>
               <h4 class="title"><strong>
-                  <asp:Button ID="KycDoc" runat="server" class="btn btn-light" Text="KYC Document" OnClick="KycDoc_Click" />
+                  <asp:Button ID="KycDoc" runat="server" class="btn btn-light" Text="KYC Verification" OnClick="KycDoc_Click" />
                   </strong>
 
               </h4>
@@ -76,9 +76,9 @@
 
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
             <div class="box">
-              <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
+              <center><img src="../static/loan.png" width="80"></center>
               <h4 class="title"><strong>
-                  <asp:Button ID="LoanDoc" runat="server" class="btn btn-light" Text="Loan Document" OnClick="LoanDoc_Click" />
+                  <asp:Button ID="LoanDoc" runat="server" class="btn btn-light" Text="Loan Verification" OnClick="LoanDoc_Click" />
                   </strong>
               </h4>
               <!-- <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p> -->
@@ -87,9 +87,9 @@
 
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
             <div class="box">
-              <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-analytics-outline" style="color: #3fcdc7;"></i></div>
+              <center><img src="../static/cibil.svg" width="80"></center>
               <h4 class="title"><strong>
-                    <asp:Button ID="Other" runat="server" class="btn btn-light" Text="Other" />
+                    <asp:Button ID="Other" runat="server" class="btn btn-light" Text="Cibil Score Verification" />
                   </strong>
 
 

@@ -121,12 +121,12 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="page.aspx" />
+    <Content Include="HomeLoanPage.aspx" />
     <Content Include="login.aspx" />
     <Content Include="dashboard.aspx" />
     <Content Include="loan.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="kyc.aspx" />
+    <Content Include="HomeLoanList.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -167,12 +167,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="kyc.aspx.cs">
-      <DependentUpon>kyc.aspx</DependentUpon>
+    <Compile Include="HomeLoanList.aspx.cs">
+      <DependentUpon>HomeLoanList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="kyc.aspx.designer.cs">
-      <DependentUpon>kyc.aspx</DependentUpon>
+    <Compile Include="HomeLoanList.aspx.designer.cs">
+      <DependentUpon>HomeLoanList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -196,12 +196,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="page.aspx.cs">
-      <DependentUpon>page.aspx</DependentUpon>
+    <Compile Include="HomeLoanPage.aspx.cs">
+      <DependentUpon>HomeLoanPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="page.aspx.designer.cs">
-      <DependentUpon>page.aspx</DependentUpon>
+    <Compile Include="HomeLoanPage.aspx.designer.cs">
+      <DependentUpon>HomeLoanPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

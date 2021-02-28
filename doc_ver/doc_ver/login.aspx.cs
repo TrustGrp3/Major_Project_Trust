@@ -32,7 +32,7 @@ namespace doc_ver
 
             SqlConnection sqlcon = new SqlConnection(constring);
 
-            String squery = "select * from Admin where Email ='" + email.Text + "' AND Password = '" + Password.Text + "'";
+            String squery = "select * from AdminLogin where Email ='" + email.Text + "' AND Password = '" + Password.Text + "'";
             SqlCommand cmd = new SqlCommand(squery, sqlcon);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
 

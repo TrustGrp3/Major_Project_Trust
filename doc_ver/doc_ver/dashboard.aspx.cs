@@ -21,16 +21,14 @@ namespace doc_ver
 
             if (Session["User"] == null)
             {
-
                 Response.Redirect("login.aspx");
-
             }
             else
             {
 
                 String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
                 SqlConnection sqlcon = new SqlConnection(constring);
-                String squery4 = "select * from Admin where Email ='" + Session["user"] + "'";
+                String squery4 = "select * from AdminLogin where Email ='" + Session["user"] + "'";
                 SqlCommand cmd4 = new SqlCommand(squery4, sqlcon);
                 SqlDataAdapter sda4 = new SqlDataAdapter(cmd4);
                 DataTable dt4 = new DataTable();
@@ -47,12 +45,12 @@ namespace doc_ver
 
         protected void KycDoc_Click(object sender, EventArgs e)
         {
-            Response.Redirect("kyc.aspx");
+            Response.Redirect("loan.aspx");
         }
 
         protected void LoanDoc_Click(object sender, EventArgs e)
         {
-            Response.Redirect("loan.aspx");
+            Response.Redirect("HomeLoanList.aspx");
         }
 
         protected void SignOut_Click1(object sender, EventArgs e)
