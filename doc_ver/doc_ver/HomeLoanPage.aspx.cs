@@ -104,7 +104,7 @@ namespace doc_ver
 
 
                     name.Text = "";
-                    fatherName.Text = "cfb ";
+                    fatherName.Text = "";
                     motherName.Text = "";
                     dob.Text = "";
                     gender.Text = "";
@@ -126,29 +126,354 @@ namespace doc_ver
 
         }
 
+
         protected void Submit_Click(object sender, EventArgs e)
         {
 
+            if (IncomeDocStatusLabel.Text == "Verified" && CorpDocStatusLabel.Text == "Verified" || PartnerDocStatusLabel.Text == "Verified" && StatementDocStatusLabel.Text == "Verified" && OtherDocStatusLabel.Text == "Verified" || AddiDocStatusLabel.Text == "Verified")
+
+            {
+                OverallStatus.Text = "Verified";
+
+
+
+                String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+                SqlConnection sqlcon = new SqlConnection(constring);
+
+                String squery = "UPDATE HomeLoan SET IncomeDocStatus='" + IncomeDocStatusLabel + "' , PvtCompanyDocStatus='" + CorpDocStatusLabel.Text + "' , PartnershipDocStatus='" + PartnerDocStatusLabel.Text + "' , AdditionalIncomeDocStatus='" + AddiDocStatusLabel.Text + "' , BankStatementDocStatus='" + StatementDocStatusLabel.Text + "' , OtherDocStatus='" + OtherDocStatusLabel.Text + "' , OverAllStatus='" + OverallStatus.Text + "' " +
+                    " where PAN_NO = '" + Label1.Text + "'";
+
+                SqlCommand cmd = new SqlCommand(squery, sqlcon);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                sda.Fill(dt);
+
+                Response.Redirect("HomeLoanList.aspx");
+
+            }
+
+            else
+            {
+                OverallStatus.Text = "Pending";
+
+
+                String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+                SqlConnection sqlcon = new SqlConnection(constring);
+
+                String squery = "UPDATE HomeLoan SET IncomeDocStatus='" + IncomeDocStatusLabel.Text + "' , PvtCompanyDocStatus='" + CorpDocStatusLabel.Text + "' , PartnershipDocStatus='" + PartnerDocStatusLabel.Text + "' , AdditionalIncomeDocStatus='" + AddiDocStatusLabel.Text + "' , BankStatementDocStatus='" + StatementDocStatusLabel.Text + "' , OtherDocStatus='" + OtherDocStatusLabel.Text + "' , OverAllStatus='" + OverallStatus.Text + "' " +
+                    " where PAN_NO = '" + Label1.Text + "'";
+
+                SqlCommand cmd = new SqlCommand(squery, sqlcon);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+
+                sda.Fill(dt);
+
+                Response.Redirect("HomeLoanList.aspx");
+
+            }
+
             
 
-            name.Text = "bv gvbn";
+        }
 
-
-            
-
-
-            
+        protected void PhotoNotVerified_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
         protected void IncomeVerify_Click(object sender, EventArgs e)
         {
+            IncomeDocStatusLabel.Text = "Verified";
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);            
+
+            String squery = "UPDATE HomeLoan SET IncomeDocStatus='" + IncomeDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
 
         }
 
-        protected void FinalSubmit_Click(object sender, EventArgs e)
+     
+        protected void IncomeDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Response.Redirect("HomeLoanList.aspx");
+            IncomeDocStatusLabel.Text = IncomeDropDown.SelectedValue;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET IncomeDocStatus='" + IncomeDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+        }
+
+        
+
+        protected void IncomeNotVerify_TextChanged(object sender, EventArgs e)
+        {
+            IncomeDocStatusLabel.Text = PhotoNotVerified.Text;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET IncomeDocStatus='" + IncomeDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+        }
+
+        protected void CorpDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CorpDocStatusLabel.Text = CorpDropDown.SelectedValue;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET PvtCompanyDocStatus='" + CorpDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+
+        }
+
+        protected void CorpVerify_Click(object sender, EventArgs e)
+        {
+            CorpDocStatusLabel.Text = "Verified";
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET PvtCompanyDocStatus='" + CorpDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+        }
+
+        protected void CorpNotVerify_TextChanged(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        protected void PartnerDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PartnerDocStatusLabel.Text = PartnerDropDown.SelectedValue;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET PartnershipDocStatus='" + PartnerDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+
+
+        }
+
+        protected void PartnerVerify_Click(object sender, EventArgs e)
+        {
+            PartnerDocStatusLabel.Text = "Verified";
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET PartnershipDocStatus='" + PartnerDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+
+
+        }
+
+        protected void PartnerNotVerify_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AddiDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddiDocStatusLabel.Text = AddiDropDown.SelectedValue;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET AdditionalIncomeDocStatus='" + AddiDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+
+        }
+
+        protected void AddiVerify_Click(object sender, EventArgs e)
+        {
+            AddiDocStatusLabel.Text = "Verified";
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET AdditionalIncomeDocStatus='" + AddiDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+        }
+
+        protected void AddiNotVerify_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        protected void StatementDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            StatementDocStatusLabel.Text = StatementDropDown.SelectedValue;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET BankStatementDocStatus='" + StatementDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+        }
+
+        protected void StatementVerify_Click(object sender, EventArgs e)
+        {
+            StatementDocStatusLabel.Text = "Verified";
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET BankStatementDocStatus='" + StatementDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+
+
+        }
+
+        protected void StatementNotVerify_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OtherDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OtherDocStatusLabel.Text = OtherDropdown.SelectedValue;
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET OtherDocStatus='" + OtherDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
+        }
+
+        protected void OtherVerify_Click(object sender, EventArgs e)
+        {
+            OtherDocStatusLabel.Text = "Verified";
+
+            String constring = ConfigurationManager.ConnectionStrings["forchashConnectionString"].ConnectionString;
+            SqlConnection sqlcon = new SqlConnection(constring);
+
+            String squery = "UPDATE HomeLoan SET OtherDocStatus='" + OtherDocStatusLabel.Text + "'" +
+                " where PAN_NO = '" + Label1.Text + "'";
+
+            SqlCommand cmd = new SqlCommand(squery, sqlcon);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+
         }
     }
 }

@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>KYC Documents</title>
+  <title>Home Loan Documents</title>
 
 
 	<link rel="icon" href="../static/document.png" type="Image/icon">
@@ -31,7 +31,7 @@
 <form id="form1" runat="server">
 	
 	<nav class="navbar sticky-top navbar-dark bg-dark">
-  		<a class="navbar-brand" href="#">KYC DOCUMENT VERIFICATION</a>
+  		<a class="navbar-brand" href="#">HOME LOAN DOCUMENT VERIFICATION</a>
 	</nav>
 
 

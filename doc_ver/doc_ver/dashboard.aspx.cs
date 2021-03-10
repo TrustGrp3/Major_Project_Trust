@@ -50,7 +50,7 @@ namespace doc_ver
 
         protected void LoanDoc_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomeLoanList.aspx");
+            Response.Redirect("LoanHomePage.aspx");
         }
 
         protected void SignOut_Click1(object sender, EventArgs e)

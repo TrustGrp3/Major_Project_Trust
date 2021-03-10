@@ -5,6 +5,7 @@
 <html lang="en">
 
 <head>
+	 <link rel="icon" href="../static/document.png" type="Image/icon">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -203,7 +204,7 @@
 														</select>
 													</div>
 
-													<asp:TextBox ID="PhotoNotVerified" placeholder="mention if 'Other'" class="form-control" runat="server"></asp:TextBox>
+													<asp:TextBox ID="PhotoNotVerified" placeholder="mention if 'Other'" class="form-control" runat="server" AutoPostBack="True" OnTextChanged="PhotoNotVerified_TextChanged"></asp:TextBox>
 														</TD>
 														<TD>
 													<asp:Button ID="PhotoVerified" class="btn btn-outline-success" runat="server" Text="Verified"></asp:Button>									
@@ -340,7 +341,9 @@
 
 
 
+							<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
+							<asp:UpdatePanel ID="IncomeDocPanel" runat="server"> <ContentTemplate> 
 							<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   								INCOME DOCUMENTS
 							</nav>
@@ -357,6 +360,8 @@
 
     							<tbody>
 					      			<tr>
+									
+
 							        	<td> 
 											<br><br><br><br>
 											<label> Income Details </label> 
@@ -365,6 +370,7 @@
 											<asp:Label ID="IncomeDocName" runat="server"></asp:Label>
 											</strong>
 											<br />
+
 											<asp:TextBox ID="IncomeDocStatusLabel" Text="Status" runat="server"></asp:TextBox>
 							        	</td>
 
@@ -384,50 +390,26 @@
 												<table>	
 												<TR>
 													<TD>
-													<div class="dropdown">
 
-														<select id="IncomeDropDown" class="btn btn-outline-danger">
-															<option value="Not Verified" selected>Not Verified</option>
-															<option value="Info. Mismatch">Info. Mismatch</option>
-															<option value="Blured Image">Blured Image</option>
-															<option value="Image Not Found">Image Not Found</option>
-															<option value="Other">Other</option>
-														</select>
-													</div>
+														<asp:DropDownList ID="IncomeDropDown" class="btn btn-outline-danger" runat="server" AutoPostBack="True" OnSelectedIndexChanged="IncomeDropDown_SelectedIndexChanged">
+															<asp:ListItem >Not Verified</asp:ListItem>
+															<asp:ListItem>Info. Mismatch</asp:ListItem>
+															<asp:ListItem>Blured Image</asp:ListItem>
+															<asp:ListItem>Image Not Found</asp:ListItem>
+															<asp:ListItem>Other</asp:ListItem>
+														</asp:DropDownList>
+											
 													
-													<asp:TextBox ID="IncomeNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server"></asp:TextBox>
+													<asp:TextBox ID="IncomeNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server" AutoPostBack="true" OnTextChanged="IncomeNotVerify_TextChanged"></asp:TextBox>
 														</TD>
 														<TD>
 													<asp:Button ID="IncomeVerify" class="btn btn-outline-success" runat="server" Text="Verified" OnClick="IncomeVerify_Click"></asp:Button>									
 														</TD>
 													</TR>
 
-													<script>
-                                                        jQuery(function () {
-                                                            $('#IncomeVerify').click(function (e) {
-                                                                e.preventDefault();
-                                                                var name = "Verified";
-                                                                $("#IncomeDocStatusLabel").val(name);
-                                                            });
-                                                        });
-													</script>
-
-													<script type="text/javascript">
-                                                        $(document).ready(function () {
-                                                            $('#IncomeNotVerify').keyup(function () {
-                                                                $('#IncomeDocStatusLabel').val($(this).val());
-                                                            });
-                                                        });
-													</script>
-
-													<script>
-                                                        $('#IncomeDropDown').change(function () {
-                                                            var qty = $('#IncomeDropDown').val();
-                                                            $("#IncomeDocStatusLabel").val(qty);
-                                                        });
-													</script>
 													</table>
 											</div>
+											
 											
 										</td>
 							        	<td>
@@ -441,12 +423,18 @@
 											<asp:TextBox ID="IncomeAuthority" runat="server" type="text" class="form-control"></asp:TextBox>
 											<br />
 							        	</td>
+
+										  
 							      	</tr>
 					    		</tbody>
 					  		</table>
+								</ContentTemplate> </asp:UpdatePanel>
 
 					  		<hr>
 
+
+
+							<asp:UpdatePanel ID="UpdatePanel2" runat="server"> <ContentTemplate> 
 					  		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   								NON-INDIVIDUAL BORROWER - PVT. LTD./LTD. COMPANY
 							</nav>
@@ -492,34 +480,22 @@
 												<table>	
 												<TR>
 													<TD>
-													<div class="dropdown">
+														<asp:DropDownList ID="CorpDropDown" class="btn btn-outline-danger" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CorpDropDown_SelectedIndexChanged">
+															<asp:ListItem >Not Verified</asp:ListItem>
+															<asp:ListItem>Info. Mismatch</asp:ListItem>
+															<asp:ListItem>Blured Image</asp:ListItem>
+															<asp:ListItem>Image Not Found</asp:ListItem>
+															<asp:ListItem>Other</asp:ListItem>
+														</asp:DropDownList>
 
-														<select id="CorpDropDown" class="btn btn-outline-danger">
-															<option value="Not Verified" selected>Not Verified</option>
-															<option value="Info. Mismatch">Info. Mismatch</option>
-															<option value="Blured Image">Blured Image</option>
-															<option value="Image Not Found">Image Not Found</option>
-															<option value="Other">Other</option>
-														</select>
-													</div>
 
-													<asp:TextBox ID="CorpNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server"></asp:TextBox>
+													<asp:TextBox ID="CorpNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server" OnTextChanged="CorpNotVerify_TextChanged"></asp:TextBox>
 														</TD>
 														<TD>
-													<asp:Button ID="CorpVerify" class="btn btn-outline-success" runat="server" Text="Verified"></asp:Button>									
+													<asp:Button ID="CorpVerify" class="btn btn-outline-success" runat="server" Text="Verified" OnClick="CorpVerify_Click"></asp:Button>									
 														</TD>
 													</TR>
-
-													<script>
-                                                        jQuery(function () {
-                                                            $('#CorpVerify').click(function (e) {
-                                                                e.preventDefault();
-                                                                var name = "Verified";
-                                                                $("#CorpDocStatusLabel").val(name);
-                                                            });
-                                                        });
-													</script>
-
+												
 													<script type="text/javascript">
                                                         $(document).ready(function () {
                                                             $('#CorpNotVerify').keyup(function () {
@@ -528,12 +504,6 @@
                                                         });
 													</script>
 
-													<script>
-                                                        $('#CorpDropDown').change(function () {
-                                                            var qty = $('#CorpDropDown').val();
-                                                            $("#CorpDocStatusLabel").val(qty);
-                                                        });
-													</script>
 													</table>
 											</div>
 											
@@ -554,8 +524,11 @@
 
 					    		</tbody>
 					  		</table>
+							</ContentTemplate> </asp:UpdatePanel>
 
 					  		<hr>
+
+							<asp:UpdatePanel ID="UpdatePanel3" runat="server"> <ContentTemplate> 
 
 					  		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   								NON-INDIVIDUAL BORROWER - PARTNERSHIP FIRM
@@ -602,33 +575,22 @@
 												<table>	
 												<TR>
 													<TD>
-													<div class="dropdown">
 
-														<select id="PartnerDropDown" class="btn btn-outline-danger">
-															<option value="Not Verified" selected>Not Verified</option>
-															<option value="Info. Mismatch">Info. Mismatch</option>
-															<option value="Blured Image">Blured Image</option>
-															<option value="Image Not Found">Image Not Found</option>
-															<option value="Other">Other</option>
-														</select>
-													</div>
+														<asp:DropDownList ID="PartnerDropDown" class="btn btn-outline-danger" runat="server" AutoPostBack="True" OnSelectedIndexChanged="PartnerDropDown_SelectedIndexChanged">
+															<asp:ListItem >Not Verified</asp:ListItem>
+															<asp:ListItem>Info. Mismatch</asp:ListItem>
+															<asp:ListItem>Blured Image</asp:ListItem>
+															<asp:ListItem>Image Not Found</asp:ListItem>
+															<asp:ListItem>Other</asp:ListItem>
+														</asp:DropDownList>
 
-													<asp:TextBox ID="PartnerNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server"></asp:TextBox>
+
+													<asp:TextBox ID="PartnerNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server" OnTextChanged="PartnerNotVerify_TextChanged"></asp:TextBox>
 														</TD>
 														<TD>
-													<asp:Button ID="PartnerVerify" class="btn btn-outline-success" runat="server" Text="Verified"></asp:Button>									
+													<asp:Button ID="PartnerVerify" class="btn btn-outline-success" runat="server" Text="Verified" OnClick="PartnerVerify_Click"></asp:Button>									
 														</TD>
 													</TR>
-
-													<script>
-                                                        jQuery(function () {
-                                                            $('#PartnerVerify').click(function (e) {
-                                                                e.preventDefault();
-                                                                var name = "Verified";
-                                                                $("#PartnerDocStatusLabel").val(name);
-                                                            });
-                                                        });
-													</script>
 
 													<script type="text/javascript">
                                                         $(document).ready(function () {
@@ -638,12 +600,6 @@
                                                         });
 													</script>
 
-													<script>
-                                                        $('#PartnerDropDown').change(function () {
-                                                            var qty = $('#PartnerDropDown').val();
-                                                            $("#PartnerDocStatusLabel").val(qty);
-                                                        });
-													</script>
 													</table>
 											</div>
 											
@@ -667,7 +623,10 @@
 
 					    		</tbody>
 					  		</table>
+								</ContentTemplate> </asp:UpdatePanel>
 
+
+							<asp:UpdatePanel ID="UpdatePanel4" runat="server"> <ContentTemplate>
 					  		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   								ADDITIONAL INCOME DETAILS - IF APPLICABLE
 							</nav>
@@ -713,33 +672,23 @@
 												<table>	
 												<TR>
 													<TD>
-													<div class="dropdown">
 
-														<select id="AddiDropDown" class="btn btn-outline-danger">
-															<option value="Not Verified" selected>Not Verified</option>
-															<option value="Info. Mismatch">Info. Mismatch</option>
-															<option value="Blured Image">Blured Image</option>
-															<option value="Image Not Found">Image Not Found</option>
-															<option value="Other">Other</option>
-														</select>
-													</div>
+														<asp:DropDownList ID="AddiDropDown" class="btn btn-outline-danger" runat="server" AutoPostBack="True" OnSelectedIndexChanged="AddiDropDown_SelectedIndexChanged" >
+															<asp:ListItem >Not Verified</asp:ListItem>
+															<asp:ListItem>Info. Mismatch</asp:ListItem>
+															<asp:ListItem>Blured Image</asp:ListItem>
+															<asp:ListItem>Image Not Found</asp:ListItem>
+															<asp:ListItem>Other</asp:ListItem>
+														</asp:DropDownList>
 
-													<asp:TextBox ID="AddiNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server"></asp:TextBox>
+
+													<asp:TextBox ID="AddiNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server" OnTextChanged="AddiNotVerify_TextChanged"></asp:TextBox>
 														</TD>
 														<TD>
-													<asp:Button ID="AddiVerify" class="btn btn-outline-success" runat="server" Text="Verified"></asp:Button>									
+													<asp:Button ID="AddiVerify" class="btn btn-outline-success" runat="server" Text="Verified" OnClick="AddiVerify_Click"></asp:Button>									
 														</TD>
 													</TR>
-
-													<script>
-                                                        jQuery(function () {
-                                                            $('#AddiVerify').click(function (e) {
-                                                                e.preventDefault();
-                                                                var name = "Verified";
-                                                                $("#AddiDocStatusLabel").val(name);
-                                                            });
-                                                        });
-													</script>
+								
 
 													<script type="text/javascript">
                                                         $(document).ready(function () {
@@ -749,12 +698,6 @@
                                                         });
 													</script>
 
-													<script>
-                                                        $('#AddiDropDown').change(function () {
-                                                            var qty = $('#AddiDropDown').val();
-                                                            $("#AddiDocStatusLabel").val(qty);
-                                                        });
-													</script>
 													</table>
 											</div>
 											
@@ -775,7 +718,10 @@
 
 					    		</tbody>
 					  		</table>
+								</ContentTemplate> </asp:UpdatePanel>
 
+
+							<asp:UpdatePanel ID="UpdatePanel5" runat="server"> <ContentTemplate> 
 					  		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   								BANK STATEMENT
 							</nav>
@@ -819,33 +765,23 @@
 												<table>	
 												<TR>
 													<TD>
-													<div class="dropdown">
 
-														<select id="StatementDropDown" class="btn btn-outline-danger">
-															<option value="Not Verified" selected>Not Verified</option>
-															<option value="Info. Mismatch">Info. Mismatch</option>
-															<option value="Blured Image">Blured Image</option>
-															<option value="Image Not Found">Image Not Found</option>
-															<option value="Other">Other</option>
-														</select>
-													</div>
+														<asp:DropDownList ID="StatementDropDown" class="btn btn-outline-danger" runat="server" AutoPostBack="True" OnSelectedIndexChanged="StatementDropDown_SelectedIndexChanged" >
+															<asp:ListItem >Not Verified</asp:ListItem>
+															<asp:ListItem>Info. Mismatch</asp:ListItem>
+															<asp:ListItem>Blured Image</asp:ListItem>
+															<asp:ListItem>Image Not Found</asp:ListItem>
+															<asp:ListItem>Other</asp:ListItem>
+														</asp:DropDownList>
 
-													<asp:TextBox ID="StatementNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server"></asp:TextBox>
+													<asp:TextBox ID="StatementNotVerify" placeholder="mention if 'Other'" class="form-control" runat="server" OnTextChanged="StatementNotVerify_TextChanged"></asp:TextBox>
 														</TD>
+
 														<TD>
-													<asp:Button ID="StatementVerify" class="btn btn-outline-success" runat="server" Text="Verified"></asp:Button>									
+													<asp:Button ID="StatementVerify" class="btn btn-outline-success" runat="server" Text="Verified" OnClick="StatementVerify_Click"></asp:Button>									
 														</TD>
 													</TR>
 
-													<script>
-                                                        jQuery(function () {
-                                                            $('#StatementVerify').click(function (e) {
-                                                                e.preventDefault();
-                                                                var name = "Verified";
-                                                                $("#StatementDocStatusLabel").val(name);
-                                                            });
-                                                        });
-													</script>
 
 													<script type="text/javascript">
                                                         $(document).ready(function () {
@@ -855,12 +791,6 @@
                                                         });
 													</script>
 
-													<script>
-                                                        $('#StatementDropDown').change(function () {
-                                                            var qty = $('#StatementDropDown').val();
-                                                            $("#StatementDocStatusLabel").val(qty);
-                                                        });
-													</script>
 													</table>
 											</div>
 											
@@ -881,8 +811,11 @@
 
 					    		</tbody>
 					  		</table>
+							</ContentTemplate> </asp:UpdatePanel>
 
 
+
+							<asp:UpdatePanel ID="UpdatePanel6" runat="server"> <ContentTemplate> 
 					  		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 								OTHERS							
 							</nav>
@@ -923,38 +856,25 @@
 											<div class="col-lg">											
 												<table>	
 												<TR>
-													<TD>												
-													<div class="dropdown">
+													<TD>	
+														
+														<asp:DropDownList ID="OtherDropdown" class="btn btn-outline-danger" runat="server" AutoPostBack="True" OnSelectedIndexChanged="OtherDropdown_SelectedIndexChanged" >
+															<asp:ListItem >Not Verified</asp:ListItem>
+															<asp:ListItem>Info. Mismatch</asp:ListItem>
+															<asp:ListItem>Blured Image</asp:ListItem>
+															<asp:ListItem>Image Not Found</asp:ListItem>
+															<asp:ListItem>Other</asp:ListItem>
+														</asp:DropDownList>
 
-														<select id="OtherDropdown" class="btn btn-outline-danger">
-															<option value="Not Verified" selected>Not Verified</option>
-															<option value="Info. Mismatch">Info. Mismatch</option>
-															<option value="Blured Image">Blured Image</option>
-															<option value="Image Not Found">Image Not Found</option>
-															<option value="Other">Other</option>
-														</select>
-
-													</div>
 
 														<input id="OtherNotVerify" class="form-control" placeholder="mention if 'Other'" type="text" name="inputBox" />
 														</TD>
 														<TD>
-													<button id="OtherVerify" value="Verified" class="btn btn-outline-success" onclick="myFunction()">Verified</button>
 
+													<asp:Button ID="OtherVerify" class="btn btn-outline-success" runat="server" Text="Verified" OnClick="OtherVerify_Click"></asp:Button>
 														</TD>
 
-													
-
-													<script>
-                                                        jQuery(function () {
-                                                            $('#OtherVerify').click(function (e) {
-                                                                e.preventDefault();
-                                                                var name = "Verified";
-                                                                $("#OtherDocStatusLabel").val(name);
-                                                            });
-                                                        });
-													</script>
-
+					
 													<script type="text/javascript">
                                                         $(document).ready(function () {
                                                             $('#OtherNotVerify').keyup(function () {
@@ -963,13 +883,10 @@
                                                         });
 													</script>
 
-													<script>
-                                                        $('#OtherDropdown').change(function () {
-                                                            var qty = $('#OtherDropdown').val();
-                                                            $("#OtherDocStatusLabel").val(qty);
-                                                        });
-													</script>
-<p>							 
+                                                    <caption>
+                                                        <p>
+                                                        </p>
+                                                    </caption>
   
 													 
 													
@@ -994,7 +911,7 @@
 
 					    		</tbody>
 					  		</table>
-
+							</ContentTemplate> </asp:UpdatePanel>
 
 
 
@@ -1006,24 +923,9 @@
 
 
 						<br />
-						<asp:Button ID="Submit" class="btn btn-outline-danger btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#SubmitModal" runat="server" Text="Submit" OnClick="Submit_Click"></asp:Button>
-
-							<div class="modal fade" id="SubmitModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							  <div class="modal-dialog">
-								<div class="modal-content">
-								  <div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								  </div>
-							  
-								  <div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
-									<asp:Button ID="FinalSubmit" class="btn btn-primary" runat="server" Text="Save Changes" OnClick="FinalSubmit_Click"></asp:Button>
-								  </div>
-								</div>
-							  </div>
-							</div>
+						<asp:Button ID="Submit" class="btn btn-outline-danger btn-lg btn-block" runat="server" Text="Submit" OnClick="Submit_Click"></asp:Button>
+				
+							
 						</div>
 
 						

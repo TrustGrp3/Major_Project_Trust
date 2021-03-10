@@ -240,6 +240,24 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.Button SignVerify;
 
         /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// IncomeDocPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel IncomeDocPanel;
+
+        /// <summary>
         /// IncomeDocName control.
         /// </summary>
         /// <remarks>
@@ -274,6 +292,15 @@ namespace doc_ver
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image IncomeDoc_1;
+
+        /// <summary>
+        /// IncomeDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList IncomeDropDown;
 
         /// <summary>
         /// IncomeNotVerify control.
@@ -321,6 +348,15 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.TextBox IncomeAuthority;
 
         /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+
+        /// <summary>
         /// CorpDocName control.
         /// </summary>
         /// <remarks>
@@ -355,6 +391,15 @@ namespace doc_ver
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image CorpDoc_1;
+
+        /// <summary>
+        /// CorpDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CorpDropDown;
 
         /// <summary>
         /// CorpNotVerify control.
@@ -402,6 +447,15 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.TextBox CorpAutho;
 
         /// <summary>
+        /// UpdatePanel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
+
+        /// <summary>
         /// PartnerDocName control.
         /// </summary>
         /// <remarks>
@@ -436,6 +490,15 @@ namespace doc_ver
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image PartnerDoc_1;
+
+        /// <summary>
+        /// PartnerDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList PartnerDropDown;
 
         /// <summary>
         /// PartnerNotVerify control.
@@ -483,6 +546,15 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.TextBox PartnerAutho;
 
         /// <summary>
+        /// UpdatePanel4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel4;
+
+        /// <summary>
         /// AddiDocName control.
         /// </summary>
         /// <remarks>
@@ -517,6 +589,15 @@ namespace doc_ver
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image AddiDoc_1;
+
+        /// <summary>
+        /// AddiDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList AddiDropDown;
 
         /// <summary>
         /// AddiNotVerify control.
@@ -564,6 +645,15 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.TextBox AddiAutho;
 
         /// <summary>
+        /// UpdatePanel5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel5;
+
+        /// <summary>
         /// StatementDocName control.
         /// </summary>
         /// <remarks>
@@ -598,6 +688,15 @@ namespace doc_ver
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image StatementDoc_1;
+
+        /// <summary>
+        /// StatementDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList StatementDropDown;
 
         /// <summary>
         /// StatementNotVerify control.
@@ -645,6 +744,15 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.TextBox StatementAutho;
 
         /// <summary>
+        /// UpdatePanel6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel6;
+
+        /// <summary>
         /// OtherDocName control.
         /// </summary>
         /// <remarks>
@@ -681,6 +789,24 @@ namespace doc_ver
         protected global::System.Web.UI.WebControls.Image OtherDoc_1;
 
         /// <summary>
+        /// OtherDropdown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList OtherDropdown;
+
+        /// <summary>
+        /// OtherVerify control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button OtherVerify;
+
+        /// <summary>
         /// OtherNum control.
         /// </summary>
         /// <remarks>
@@ -715,14 +841,5 @@ namespace doc_ver
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Submit;
-
-        /// <summary>
-        /// FinalSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FinalSubmit;
     }
 }
